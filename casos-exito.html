@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos de Éxito | INTEGRA Inteligencia Estratégica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#071A35;--bg-deep:#040F1F;--gold:#D4AF37;--gold-light:#EBC75C;--gold-pale:rgba(212,175,55,0.12);--gold-mid:rgba(212,175,55,0.25);--light:#E8F1FB;--light2:#F4F8FD;--dark-text:#0E2A55;--muted:#3a5278;--white:#fff;--line:rgba(255,255,255,0.10);}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:white;overflow-x:hidden;}
+a{text-decoration:none;}img{max-width:100%;height:auto;display:block;}
+
+/* HERO */
+.hero{background-image:linear-gradient(160deg,rgba(4,15,31,0.93) 0%,rgba(7,26,53,0.84) 100%),url("fondo.png");background-size:cover;background-position:center;padding:88px 48px 96px;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 50% 100%,rgba(212,175,55,0.07) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid rgba(212,175,55,0.30);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.6px;text-transform:uppercase;margin-bottom:22px;}
+.hero-eyebrow span{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;line-height:1.12;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero-lead{font-size:clamp(1rem,2vw,1.2rem);line-height:1.85;color:rgba(255,255,255,0.82);max-width:760px;margin:0 auto;}
+/* IMPACTO BAND */
+.impacto-band{background:var(--bg-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 48px;}
+.impacto-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
+.impacto-item{text-align:center;padding:20px 16px;}
+.impacto-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--gold);line-height:1;margin-bottom:6px;}
+.impacto-label{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.5;}
+.impacto-sep{width:1px;background:rgba(255,255,255,0.08);margin:20px 0;}
+/* CASOS */
+.casos{background:var(--light);padding:88px 48px;}
+.casos-inner{max-width:1100px;margin:0 auto;}
+.casos-header{text-align:center;margin-bottom:56px;}
+.sec-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.sec-h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.5vw,2.75rem);font-weight:800;color:var(--dark-text);line-height:1.15;margin-bottom:16px;}
+.sec-h2 em{font-style:normal;color:var(--gold);}
+.sec-lead{font-size:clamp(1rem,1.8vw,1.125rem);color:var(--muted);line-height:1.82;max-width:760px;margin:0 auto;}
+.casos-grid{display:flex;flex-direction:column;gap:32px;}
+.caso-card{background:white;border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(7,26,53,0.09);border:1px solid rgba(14,42,85,0.08);}
+.caso-header{padding:32px 36px 24px;border-bottom:1px solid rgba(14,42,85,0.08);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.caso-badge{display:inline-flex;align-items:center;gap:8px;background:var(--dark-text);color:white;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap;}
+.caso-badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.caso-industria{text-align:right;}
+.caso-industria span{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px;}
+.caso-industria strong{font-size:14px;color:var(--dark-text);font-weight:700;}
+.caso-titulo{padding:0 36px 24px;}
+.caso-titulo h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:800;color:var(--dark-text);line-height:1.22;}
+.caso-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+.caso-col{padding:28px 36px;}
+.caso-col:not(:last-child){border-right:1px solid rgba(14,42,85,0.07);}
+.caso-col h3{font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.caso-col p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:10px;}
+.caso-col p:last-child{margin-bottom:0;}
+.caso-col p strong{color:var(--dark-text);}
+.caso-tag-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.caso-tag{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);line-height:1.5;}
+.caso-tag::before{content:'';width:6px;height:6px;background:rgba(14,42,85,0.25);border-radius:50%;flex-shrink:0;}
+.caso-result-list{display:flex;flex-direction:column;gap:9px;}
+.caso-result{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--dark-text);font-weight:500;line-height:1.5;}
+.caso-result::before{content:'✓';color:#22A447;font-weight:900;flex-shrink:0;margin-top:1px;}
+.caso-inteligencias{padding:20px 36px 28px;background:rgba(14,42,85,0.03);border-top:1px solid rgba(14,42,85,0.07);display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.caso-int-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-right:4px;}
+.caso-int-badge{font-size:12px;font-weight:600;color:var(--dark-text);background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.25);padding:4px 12px;border-radius:999px;}
+/* CREDIBILIDAD */
+.credibilidad{background:var(--bg);padding:88px 48px;position:relative;overflow:hidden;}
+.credibilidad::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(212,175,55,0.06) 0%,transparent 70%);pointer-events:none;}
+.cred-inner{max-width:1000px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.cred-inner .sec-h2{color:white;}
+.cred-inner .sec-h2 em{color:var(--gold);}
+.cred-lead{font-size:clamp(1rem,1.8vw,1.15rem);color:rgba(255,255,255,0.78);line-height:1.80;max-width:740px;margin:0 auto 44px auto;}
+.pilares-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:48px;}
+.pilar{background:rgba(255,255,255,0.04);border:1px solid rgba(212,175,55,0.22);border-radius:14px;padding:24px 16px;text-align:center;}
+.pilar-icon{font-size:26px;margin-bottom:10px;}
+.pilar h3{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.pilar p{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.55;}
+/* CTA */
+.cta-section{background:var(--bg-deep);padding:88px 48px;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(212,175,55,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{max-width:720px;margin:0 auto;position:relative;z-index:1;}
+.cta-section h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px;}
+.cta-section h2 em{font-style:normal;color:var(--gold);}
+.cta-section p{font-size:16px;color:rgba(255,255,255,0.70);line-height:1.80;margin-bottom:32px;}
+.btn-main{background:var(--gold);color:var(--bg);font-weight:700;font-size:15px;padding:15px 26px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 6px 22px rgba(212,175,55,0.28);}
+.btn-main:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,175,55,0.38);}
+.reassure{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:20px;}
+.reassure span{font-size:12.5px;color:rgba(255,255,255,0.42);display:flex;align-items:center;gap:5px;}
+.reassure span::before{content:'✓';color:var(--gold);font-weight:700;}
+/* FOOTER */
+.footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:22px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.35);transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:9999;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 20px rgba(37,211,102,0.42);transition:transform 0.2s,box-shadow 0.2s;}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,0.52);}
+.wa-float svg{width:28px;height:28px;}
+/* RESPONSIVE */
+@media(max-width:1024px){.caso-body{grid-template-columns:1fr;}.caso-col:not(:last-child){border-right:none;border-bottom:1px solid rgba(14,42,85,0.07);}.pilares-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:900px){.impacto-inner{grid-template-columns:repeat(2,minmax(0,1fr));}.casos,.credibilidad,.cta-section{padding-left:28px;padding-right:28px;}.hero{padding:64px 28px 80px;}}
+@media(max-width:600px){.hero{padding:52px 16px 68px;}.casos,.credibilidad,.cta-section{padding-left:16px;padding-right:16px;}.caso-header{flex-direction:column;gap:12px;}.caso-industria{text-align:left;}.caso-col{padding:22px 20px;}.caso-titulo{padding:0 20px 20px;}.caso-inteligencias{padding:16px 20px 22px;}.impacto-band{padding:28px 16px;}.impacto-inner{grid-template-columns:repeat(2,minmax(0,1fr));}.pilares-grid{grid-template-columns:1fr;}.footer{flex-direction:column;align-items:center;text-align:center;padding:18px 16px;}}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;background:rgba(7,26,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);position:sticky;top:0;z-index:1000;}
+.logo img{height:82px;width:auto;}
+.menu{display:flex;gap:26px;flex:1;justify-content:center;}
+.menu a{color:rgba(255,255,255,0.80);font-size:15px;font-weight:500;letter-spacing:0.2px;transition:color 0.2s;white-space:nowrap;}
+.menu a:hover,.menu a.active{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--bg);padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;transition:background 0.2s,transform 0.15s;flex-shrink:0;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px 6px;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;background:rgba(7,26,53,0.98);border-top:1px solid rgba(255,255,255,0.10);padding:8px 0 16px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:rgba(255,255,255,0.82);font-size:16px;font-weight:500;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
+.mobile-menu .m-cta{margin:14px 24px 0;background:var(--gold);color:var(--bg);text-align:center;padding:14px;border-radius:8px;font-weight:700;font-size:15px;border-bottom:none;}
+.mobile-menu .m-cta:hover{background:var(--gold-light);}
+@media(max-width:900px){.navbar{padding:12px 20px;}.menu{display:none;}.nav-cta{display:none;}.hamburger{display:flex;}}
+</style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><a href="INDEX.html"><img src="logo_2.png" alt="INTEGRA"></a></div>
+  <nav class="menu"><a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html" class="active">Casos de Éxito</a><a href="nosotros.html">Nosotros</a></nav>
+  <a class="nav-cta" href="formulario.html">Diagnóstico Gratuito</a>
+  <button class="hamburger" id="hbg" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mob">
+  <a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html" class="active">Casos de Éxito</a><a href="nosotros.html">Nosotros</a>
+  <a class="m-cta" href="formulario.html">Diagnóstico Gratuito</a>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span></span>Resultados reales</div>
+    <h1>Empresas que transformaron su negocio<br>con <em>INTEGRA</em></h1>
+    <p class="hero-lead">Cada caso es una historia diferente. El mismo denominador común: un diagnóstico preciso, un plan concreto y un acompañamiento que garantizó que los resultados llegaran a los números.</p>
+  </div>
+</section><div class="impacto-band">
+  <div class="impacto-inner">
+    <div class="impacto-item"><div class="impacto-num">3</div><div class="impacto-label">Casos documentados de transformación empresarial</div></div>
+    <div class="impacto-item"><div class="impacto-num">4</div><div class="impacto-label">Inteligencias integradas en cada intervención</div></div>
+    <div class="impacto-item"><div class="impacto-num">90</div><div class="impacto-label">Días para ver los primeros resultados medibles</div></div>
+    <div class="impacto-item"><div class="impacto-num">100%</div><div class="impacto-label">De los proyectos con plan de acción en los primeros 30 días</div></div>
+  </div>
+</div><section class="casos">
+  <div class="casos-inner">
+    <div class="casos-header">
+      <span class="sec-eyebrow">Tres transformaciones reales</span>
+      <h2 class="sec-h2">Cada negocio tiene un problema diferente.<br>El método es el <em>mismo.</em></h2>
+      <p class="sec-lead">Un diagnóstico estructurado que identifica dónde está el problema, un plan de acción que define qué hacer primero, y un seguimiento que garantiza que los resultados ocurran.</p>
+    </div>
+    <div class="casos-grid"><article class="caso-card">
+  <div class="caso-header">
+    <div class="caso-badge"><span class="caso-badge-dot"></span>Caso 01</div>
+    <div class="caso-industria"><span>Industria</span><strong>Servicios profesionales</strong></div>
+  </div>
+  <div class="caso-titulo"><h2>De incertidumbre fiscal a control estratégico del negocio</h2></div>
+  <div class="caso-body">
+    <div class="caso-col">
+      <h3>La situación</h3>
+      <p>Empresa con clientes e ingresos constantes, pero con una preocupación permanente: <strong>¿estoy haciendo bien las cosas con el SAT?</strong></p>
+      <p>Las declaraciones se presentaban sin estrategia. Los riesgos de error o multa siempre estaban presentes. Y no había claridad sobre la rentabilidad real del negocio.</p>
+      <div class="caso-tag-list">
+        <span class="caso-tag">Sin estrategia fiscal preventiva</span>
+        <span class="caso-tag">Sin indicadores financieros</span>
+        <span class="caso-tag">Procesos administrativos desorganizados</span>
+      </div>
+    </div>
+    <div class="caso-col">
+      <h3>La intervención</h3>
+      <p>Revisión integral del cumplimiento fiscal e implementación de planeación preventiva. Análisis de ingresos y gastos reales con indicadores financieros. Orden administrativo y control de procesos internos.</p>
+    </div>
+    <div class="caso-col">
+      <h3>Resultados</h3>
+      <div class="caso-result-list">
+        <span class="caso-result">Eliminación de riesgos fiscales relevantes</span>
+        <span class="caso-result">Mayor control sobre la operación</span>
+        <span class="caso-result">Claridad sobre la rentabilidad real</span>
+        <span class="caso-result">Mayor tranquilidad para el empresario</span>
+      </div>
+    </div>
+  </div>
+  <div class="caso-inteligencias">
+    <span class="caso-int-label">Inteligencias aplicadas:</span>
+    <span class="caso-int-badge">Fiscal</span>
+    <span class="caso-int-badge">Financiera</span>
+    <span class="caso-int-badge">Operativa</span>
+  </div>
+</article><article class="caso-card">
+  <div class="caso-header">
+    <div class="caso-badge"><span class="caso-badge-dot"></span>Caso 02</div>
+    <div class="caso-industria"><span>Industria</span><strong>Comercio · Negocio familiar</strong></div>
+  </div>
+  <div class="caso-titulo"><h2>Cuando vender más no significa ganar más</h2></div>
+  <div class="caso-body">
+    <div class="caso-col">
+      <h3>La situación</h3>
+      <p>Negocio con <strong>ventas constantes</strong> pero con un problema recurrente al final de cada mes: <strong>¿dónde está el dinero?</strong></p>
+      <p>A pesar del volumen, el flujo de efectivo era inestable y las utilidades esperadas nunca llegaban.</p>
+      <div class="caso-tag-list">
+        <span class="caso-tag">Gastos operativos descontrolados</span>
+        <span class="caso-tag">Sin análisis de flujo de efectivo</span>
+        <span class="caso-tag">Procesos operativos poco eficientes</span>
+      </div>
+    </div>
+    <div class="caso-col">
+      <h3>La intervención</h3>
+      <p>Análisis completo del flujo de efectivo e identificación de gastos innecesarios. Optimización de procesos internos y reducción de costos operativos. Definición de indicadores de rentabilidad por línea de negocio.</p>
+    </div>
+    <div class="caso-col">
+      <h3>Resultados</h3>
+      <div class="caso-result-list">
+        <span class="caso-result">Mejora significativa del flujo de efectivo</span>
+        <span class="caso-result">Reducción de costos operativos</span>
+        <span class="caso-result">Incremento en la rentabilidad</span>
+        <span class="caso-result">El negocio ahora entiende cómo genera utilidades</span>
+      </div>
+    </div>
+  </div>
+  <div class="caso-inteligencias">
+    <span class="caso-int-label">Inteligencias aplicadas:</span>
+    <span class="caso-int-badge">Financiera</span>
+    <span class="caso-int-badge">Operativa</span>
+    <span class="caso-int-badge">Estratégica</span>
+  </div>
+</article><article class="caso-card">
+  <div class="caso-header">
+    <div class="caso-badge"><span class="caso-badge-dot"></span>Caso 03</div>
+    <div class="caso-industria"><span>Industria</span><strong>Empresa en expansión</strong></div>
+  </div>
+  <div class="caso-titulo"><h2>Crecer sin estructura puede convertirse en el problema</h2></div>
+  <div class="caso-body">
+    <div class="caso-col">
+      <h3>La situación</h3>
+      <p>Más clientes, más ventas, más trabajo. Pero también: <strong>desorganización interna, decisiones improvisadas y falta de dirección estratégica.</strong></p>
+      <p>El crecimiento estaba generando presión en lugar de estabilidad. La empresa no tenía la estructura para sostenerlo.</p>
+      <div class="caso-tag-list">
+        <span class="caso-tag">Desorganización interna</span>
+        <span class="caso-tag">Decisiones improvisadas</span>
+        <span class="caso-tag">Sin dirección estratégica clara</span>
+      </div>
+    </div>
+    <div class="caso-col">
+      <h3>La intervención</h3>
+      <p>Planeación de crecimiento y definición de objetivos empresariales. Organización de procesos internos y mejora de eficiencia operativa. Estructura clara de control financiero para sostener la expansión.</p>
+    </div>
+    <div class="caso-col">
+      <h3>Resultados</h3>
+      <div class="caso-result-list">
+        <span class="caso-result">Dirección clara para el negocio</span>
+        <span class="caso-result">Procesos internos más eficientes</span>
+        <span class="caso-result">Crecimiento sostenible y organizado</span>
+        <span class="caso-result">Mayor tranquilidad en la toma de decisiones</span>
+      </div>
+    </div>
+  </div>
+  <div class="caso-inteligencias">
+    <span class="caso-int-label">Inteligencias aplicadas:</span>
+    <span class="caso-int-badge">Estratégica</span>
+    <span class="caso-int-badge">Operativa</span>
+    <span class="caso-int-badge">Financiera</span>
+  </div>
+</article></div>
+  </div>
+</section><section class="credibilidad">
+  <div class="cred-inner">
+    <span class="sec-eyebrow">Por qué funciona</span>
+    <h2 class="sec-h2" style="color:white;">El éxito empresarial no ocurre por casualidad.<br>Ocurre con <em>método.</em></h2>
+    <p class="cred-lead">Las empresas que se consolidan toman decisiones basadas en información, estrategia y estructura. En INTEGRA hacemos exactamente eso, integrando los 4 pilares que determinan si un negocio crece o se estanca.</p>
+    <div class="pilares-grid">
+      <div class="pilar"><div class="pilar-icon">🏛</div><h3>Inteligencia Fiscal</h3><p>Cumplimiento, estructura y optimización ante el SAT</p></div>
+      <div class="pilar"><div class="pilar-icon">📊</div><h3>Inteligencia Financiera</h3><p>Rentabilidad, costos y control del flujo real</p></div>
+      <div class="pilar"><div class="pilar-icon">⚙️</div><h3>Inteligencia Operativa</h3><p>Procesos, eficiencia y sistemas que escalan</p></div>
+      <div class="pilar"><div class="pilar-icon">🎯</div><h3>Inteligencia Estratégica</h3><p>Crecimiento, posicionamiento y dirección clara</p></div>
+    </div>
+  </div>
+</section><section class="cta-section">
+  <div class="cta-inner">
+    <h2>Tu empresa puede ser el <em>próximo caso de éxito.</em></h2>
+    <p>Detrás de cada negocio hay oportunidades que aún no se han descubierto. Nuestro trabajo es ayudarte a encontrarlas y convertirlas en resultados reales.</p>
+    <a class="btn-main" href="formulario.html">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Obtener diagnóstico gratuito
+    </a>
+    <div class="reassure"><span>Sin costo ni compromiso</span><span>30–45 minutos</span><span>Resultados desde la primera sesión</span></div>
+  </div>
+</section><footer class="footer">
+  <span class="footer-copy">© 2025 INTEGRA Inteligencia Estratégica. Todos los derechos reservados.</span>
+  <div class="footer-links"><a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="formulario.html">Contacto</a></div>
+</footer><a class="wa-float" href="https://wa.me/523316036599?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20INTEGRA" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>
+(function(){
+  var h=document.getElementById('hbg'),m=document.getElementById('mob');
+  if(!h||!m)return;
+  h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}});
+})();
+</script>
+</body>
+</html>

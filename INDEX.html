@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTEGRA Inteligencia Integral — Consultoría Estratégica para Empresas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #071A35;
+      --bg-deep: #040F1F;
+      --gold: #D4AF37;
+      --gold-light: #EBC75C;
+      --gold-pale: rgba(212,175,55,0.12);
+      --light: #E8F1FB;
+      --light2: #F4F8FD;
+      --dark-text: #0E2A55;
+      --white: #ffffff;
+      --line: rgba(255,255,255,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 48px;
+      background: rgba(7,26,53,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo img { height: 88px; width: auto; }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: rgba(255,255,255,0.82);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg);
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      background-image:
+        linear-gradient(160deg, rgba(4,15,31,0.92) 0%, rgba(7,26,53,0.80) 100%),
+        url("fondo.png");
+      background-size: cover;
+      background-position: center;
+      min-height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      padding: 72px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative diagonal accent */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 40%, rgba(212,175,55,0.05) 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* LEFT */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-pale);
+      border: 1px solid rgba(212,175,55,0.30);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.10;
+      margin-bottom: 22px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.82);
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-main {
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 17px;
+      padding: 17px 30px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(212,175,55,0.30);
+    }
+    .btn-main:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(212,175,55,0.40);
+    }
+    .btn-main svg { flex-shrink: 0; }
+
+    .btn-ghost {
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--gold); }
+
+    /* hero trust line */
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .trust-avatars {
+      display: flex;
+    }
+    .trust-avatars span {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      background: var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-left: -10px;
+    }
+    .trust-avatars span:first-child { margin-left: 0; }
+    .trust-text {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    .trust-text strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+    /* RIGHT — 4 CARDS */
+    .hero-right { display: flex; flex-direction: column; gap: 0; }
+
+    .right-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .intel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .intel-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .intel-card:hover {
+      background: rgba(212,175,55,0.10);
+      border-color: rgba(212,175,55,0.35);
+      transform: translateY(-3px);
+    }
+
+    .intel-card img { width: 58px; margin: 0 auto 12px; }
+    .intel-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .intel-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* ── CREDIBILITY BAND ── */
+    .cred-band {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 28px 48px;
+    }
+    .cred-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cred-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.40);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cred-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+    .cred-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      align-items: center;
+    }
+    .cred-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: rgba(255,255,255,0.42);
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 6px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .cred-logo:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.25); }
+
+    /* ── DOLOR (PROBLEMA) ── */
+    .dolor-section {
+      background: var(--light);
+      padding: 96px 48px;
+      text-align: center;
+    }
+    .dolor-inner { max-width: 1360px; margin: 0 auto; }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--dark-text);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-h2 em { font-style: normal; color: var(--gold); }
+
+    .section-lead {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: #3a5278;
+      line-height: 1.75;
+      max-width: 820px;
+      margin: 0 auto 56px;
+    }
+
+    .dolor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .dolor-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px 26px;
+      text-align: left;
+      box-shadow: 0 4px 20px rgba(7,26,53,0.06);
+      border-left: 4px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .dolor-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      font-weight: 800;
+      color: rgba(212,175,55,0.08);
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      line-height: 1;
+    }
+
+    .dolor-card p {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--dark-text);
+      line-height: 1.65;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .dolor-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8a6d1a;
+      background: rgba(212,175,55,0.14);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* ── METODOLOGÍA ── */
+    .metodo-section {
+      background: var(--light2);
+      padding: 96px 48px;
+    }
+    .metodo-inner { max-width: 1360px; margin: 0 auto; }
+
+    .metodo-header { text-align: center; margin-bottom: 56px; }
+
+    .metodo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metodo-card {
+      background: white;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 30px 22px;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(7,26,53,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .metodo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(7,26,53,0.12);
+    }
+    .metodo-num {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 12px;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+    }
+    .metodo-card img { width: 72px; margin: 8px auto 16px; }
+    .metodo-card h3 { font-size: 18px; font-weight: 700; color: var(--dark-text); margin-bottom: 16px; }
+    .metodo-list { list-style: none; text-align: left; }
+    .metodo-list li {
+      color: #3a5278;
+      font-size: 14px;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      margin-bottom: 9px;
+      line-height: 1.5;
+    }
+    .check { color: #22A447; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── DIAGNÓSTICO CTA ── */
+    .diag-section {
+      background: var(--bg);
+      padding: 96px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .diag-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 80% 50%, rgba(212,175,55,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .diag-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .diag-left .section-eyebrow { color: var(--gold); }
+
+    .diag-left h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .diag-left h2 em { font-style: normal; color: var(--gold); }
+
+    .diag-left p {
+      font-size: 16.5px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 32px;
+    }
+
+    .diag-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 17px;
+      padding: 18px 32px;
+      border-radius: 10px;
+      box-shadow: 0 6px 28px rgba(212,175,55,0.35);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .diag-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(212,175,55,0.45);
+    }
+
+    /* RIGHT CARD */
+    .diag-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 36px 32px;
+      backdrop-filter: blur(6px);
+    }
+    .diag-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .diag-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .diag-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .diag-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gold-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .diag-item-text strong { font-size: 15px; font-weight: 600; display: block; margin-bottom: 3px; }
+    .diag-item-text span { font-size: 13.5px; color: rgba(255,255,255,0.58); line-height: 1.5; }
+    .diag-note {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.40);
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .diag-note strong { color: var(--gold); }
+
+    /* ── PROCESO ── */
+    .proceso-section {
+      background: var(--light);
+      padding: 96px 48px;
+    }
+    .proceso-inner { max-width: 900px; margin: 0 auto; }
+    .proceso-header { text-align: center; margin-bottom: 56px; }
+
+    .pasos {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .pasos::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(212,175,55,0.2));
+    }
+
+    .paso {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 0 0 36px;
+    }
+    .paso:last-child { padding-bottom: 0; }
+    .paso-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark-text);
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 4px 14px rgba(7,26,53,0.08);
+    }
+    .paso-body {
+      background: white;
+      border-radius: 16px;
+      padding: 22px 24px;
+      flex: 1;
+      box-shadow: 0 4px 16px rgba(7,26,53,0.06);
+    }
+    .paso-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+    }
+    .paso-body p { font-size: 15px; color: #4a6288; line-height: 1.65; }
+    .paso-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8a6d1a;
+      background: rgba(212,175,55,0.14);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--bg-deep);
+      padding: 96px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 100%, rgba(212,175,55,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .final-cta h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .final-cta h2 em { font-style: normal; color: var(--gold); }
+    .final-cta p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      margin-bottom: 38px;
+    }
+    .final-cta .btn-main { font-size: 18px; padding: 20px 36px; }
+
+    .final-reassure {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .reassure-item {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .reassure-item::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--line);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 14px; color: rgba(255,255,255,0.38); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.38); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+    .wa-float svg { width: 30px; height: 30px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .metodo-grid { grid-template-columns: repeat(2, 1fr); }
+      .diag-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding: 56px 28px; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-left { text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-cta-group { justify-content: center; }
+      .hero-trust { justify-content: center; }
+      .dolor-grid { grid-template-columns: 1fr; max-width: 560px; }
+      .cred-band { padding: 22px 24px; }
+      .dolor-section,
+      .metodo-section,
+      .diag-section,
+      .proceso-section,
+      .final-cta { padding: 72px 28px; }
+    }
+
+    @media (max-width: 680px) {
+      .navbar { flex-direction: column; padding: 14px 16px; }
+      .menu { gap: 12px 18px; font-size: 15px; }
+      .nav-cta { width: 100%; max-width: 360px; text-align: center; }
+      .intel-grid { grid-template-columns: 1fr 1fr; }
+      .metodo-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; align-items: center; text-align: center; padding: 20px 16px; }
+      .final-cta .btn-main { width: 100%; max-width: 360px; justify-content: center; }
+      .btn-main { width: 100%; max-width: 360px; justify-content: center; }
+      .pasos::before { left: 27px; }
+      .dolor-section,
+      .metodo-section,
+      .diag-section,
+      .proceso-section,
+      .final-cta { padding: 64px 16px; }
+    }
+
+    @media (max-width: 420px) {
+      .menu { flex-direction: column; align-items: center; }
+      .menu a { text-align: center; }
+      .intel-grid { grid-template-columns: 1fr; }
+      .cred-logos { justify-content: center; }
+    }
+  
+
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;background:rgba(7,26,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);position:sticky;top:0;z-index:1000;}
+.logo img{height:82px;width:auto;}
+.menu{display:flex;gap:26px;flex:1;justify-content:center;}
+.menu a{color:rgba(255,255,255,0.80);font-size:15px;font-weight:500;letter-spacing:0.2px;transition:color 0.2s;white-space:nowrap;}
+.menu a:hover,.menu a.active{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--bg);padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;transition:background 0.2s,transform 0.15s;flex-shrink:0;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px 6px;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;background:rgba(7,26,53,0.98);border-top:1px solid rgba(255,255,255,0.10);padding:8px 0 16px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:rgba(255,255,255,0.82);font-size:16px;font-weight:500;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
+.mobile-menu .m-cta{margin:14px 24px 0;background:var(--gold);color:var(--bg);text-align:center;padding:14px;border-radius:8px;font-weight:700;font-size:15px;border-bottom:none;}
+.mobile-menu .m-cta:hover{background:var(--gold-light);}
+@media(max-width:900px){.navbar{padding:12px 20px;}.menu{display:none;}.nav-cta{display:none;}.hamburger{display:flex;}}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo"><a href="INDEX.html"><img src="logo_2.png" alt="INTEGRA"></a></div>
+  <nav class="menu"><a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a></nav>
+  <a class="nav-cta" href="formulario.html">Diagnóstico Gratuito</a>
+  <button class="hamburger" id="hbg" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mob">
+  <a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a>
+  <a class="m-cta" href="formulario.html">Diagnóstico Gratuito</a>
+</nav>
+
+<!-- NAVBAR -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span></span>Consultoría estratégica para PyMEs</div>
+      <h1 class="hero-h1">
+        ¿Vendes bien pero al final del mes<br>
+        <em>no sabes a dónde fue el dinero?</em>
+      </h1>
+      <p class="hero-sub">
+        Eso no es mala suerte — es falta de estructura. INTEGRA integra las 4 inteligencias que tu negocio necesita para dejar de apagar incendios y empezar a crecer con claridad.
+      </p>
+      <div class="hero-cta-group">
+        <a class="btn-main" href="formulario.html">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Agenda tu Diagnóstico Gratuito
+        </a>
+        <a class="btn-ghost" href="como-funciona.html">
+          Ver cómo funciona
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <span>JM</span>
+          <span>AR</span>
+          <span>LG</span>
+          <span>+</span>
+        </div>
+        <div class="trust-text">
+          <strong>Equipo con experiencia en empresas de primer nivel.</strong><br>
+          Metodología probada, resultados medibles.
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <p class="right-label">Las 4 inteligencias de tu negocio</p>
+      <div class="intel-grid">
+        <div class="intel-card">
+          <img src="fiscal.png" alt="Inteligencia Fiscal">
+          <h3>Inteligencia Fiscal</h3>
+          <p>Cumplimiento, estructura y optimización ante el SAT</p>
+        </div>
+        <div class="intel-card">
+          <img src="finanzas.png" alt="Inteligencia Financiera">
+          <h3>Inteligencia Financiera</h3>
+          <p>Rentabilidad, costos y control de flujo real</p>
+        </div>
+        <div class="intel-card">
+          <img src="operaciones.png" alt="Inteligencia Operativa">
+          <h3>Inteligencia Operativa</h3>
+          <p>Procesos, eficiencia y sistemas que escalan</p>
+        </div>
+        <div class="intel-card">
+          <img src="estrategica.png" alt="Inteligencia Estratégica">
+          <h3>Inteligencia Estratégica</h3>
+          <p>Crecimiento, posicionamiento y dirección clara</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREDIBILITY BAND -->
+<div class="cred-band">
+  <div class="cred-inner">
+    <span class="cred-label">Equipo con trayectoria en</span>
+    <div class="cred-divider"></div>
+    <div class="cred-logos">
+      <span class="cred-logo">Walmart</span>
+      <span class="cred-logo">Coca-Cola</span>
+      <span class="cred-logo">FEMSA</span>
+      <span class="cred-logo">Amazon</span>
+      <span class="cred-logo">Mercado Libre</span>
+      <span class="cred-logo">Danone</span>
+      <span class="cred-logo">SAT</span>
+      <span class="cred-logo">Uber</span>
+      <span class="cred-logo">London Group</span>
+    </div>
+  </div>
+</div>
+
+<!-- DOLOR -->
+<section class="dolor-section">
+  <div class="dolor-inner">
+    <span class="section-eyebrow">¿Te identificas con alguno de estos escenarios?</span>
+    <h2 class="section-h2">
+      Los problemas que más le cuestan<br>
+      <em>a los negocios en México</em>
+    </h2>
+    <p class="section-lead">
+      La mayoría de los empresarios que llegan a INTEGRA no tienen un problema de esfuerzo. Tienen un problema de estructura. Estos son los patrones que vemos una y otra vez.
+    </p>
+
+    <div class="dolor-grid">
+      <div class="dolor-card">
+        <p>"Vendo bien pero no sé a dónde se va el dinero. Al final del mes siempre hay poco o nada de liquidez."</p>
+        <span class="dolor-tag">Problema financiero</span>
+      </div>
+      <div class="dolor-card">
+        <p>"Le tengo miedo al SAT. Nunca sé si estoy haciendo las cosas bien y vivo con la angustia de que me llegue una multa."</p>
+        <span class="dolor-tag">Problema fiscal</span>
+      </div>
+      <div class="dolor-card">
+        <p>"Quiero crecer pero todo depende de mí. Si no estoy, el negocio no funciona. No sé cómo salir de este círculo."</p>
+        <span class="dolor-tag">Problema operativo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section class="metodo-section">
+  <div class="metodo-inner">
+    <div class="metodo-header">
+      <span class="section-eyebrow">Nuestra metodología</span>
+      <h2 class="section-h2" style="color:var(--dark-text);">
+        Las 4 inteligencias que<br>
+        <em>transforman tu negocio</em>
+      </h2>
+      <p class="section-lead" style="margin-bottom:0;">
+        No somos contadores ni asesores de una sola área. Somos tu socio estratégico integral — atacamos los 4 pilares que determinan si un negocio crece o se estanca.
+      </p>
+    </div>
+
+    <div class="metodo-grid">
+      <div class="metodo-card">
+        <div class="metodo-num">1</div>
+        <img src="fiscal.png" alt="Inteligencia Fiscal">
+        <h3>Inteligencia Fiscal</h3>
+        <ul class="metodo-list">
+          <li><span class="check">✔</span>Estrategia fiscal integral</li>
+          <li><span class="check">✔</span>Cumplimiento y blindaje ante SAT</li>
+          <li><span class="check">✔</span>Optimización legal de impuestos</li>
+          <li><span class="check">✔</span>Declaraciones mensuales y anuales</li>
+        </ul>
+      </div>
+      <div class="metodo-card">
+        <div class="metodo-num">2</div>
+        <img src="finanzas.png" alt="Inteligencia Financiera">
+        <h3>Inteligencia Financiera</h3>
+        <ul class="metodo-list">
+          <li><span class="check">✔</span>Análisis financiero completo</li>
+          <li><span class="check">✔</span>Control de flujo de efectivo</li>
+          <li><span class="check">✔</span>Optimización de costos</li>
+          <li><span class="check">✔</span>Dashboard de KPIs en tiempo real</li>
+        </ul>
+      </div>
+      <div class="metodo-card">
+        <div class="metodo-num">3</div>
+        <img src="operaciones.png" alt="Inteligencia Operativa">
+        <h3>Inteligencia Operativa</h3>
+        <ul class="metodo-list">
+          <li><span class="check">✔</span>Diagnóstico y mapeo de procesos</li>
+          <li><span class="check">✔</span>Eliminación de cuellos de botella</li>
+          <li><span class="check">✔</span>Automatización de flujos clave</li>
+          <li><span class="check">✔</span>Estructura organizacional escalable</li>
+        </ul>
+      </div>
+      <div class="metodo-card">
+        <div class="metodo-num">4</div>
+        <img src="estrategica.png" alt="Inteligencia Estratégica">
+        <h3>Inteligencia Estratégica</h3>
+        <ul class="metodo-list">
+          <li><span class="check">✔</span>Planeación de crecimiento</li>
+          <li><span class="check">✔</span>Posicionamiento de mercado</li>
+          <li><span class="check">✔</span>Análisis competitivo</li>
+          <li><span class="check">✔</span>Estrategia de ventas y expansión</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO CTA (sección central de conversión) -->
+<section class="diag-section">
+  <div class="diag-inner">
+
+    <div class="diag-left">
+      <span class="section-eyebrow">Diagnóstico Empresarial 360°</span>
+      <h2>Tu primer paso hacia un<br><em>negocio más rentable</em></h2>
+      <p>
+        Nuestro objetivo es claro: que tu negocio incremente su rentabilidad. Todo comienza con un diagnóstico gratuito donde identificamos exactamente qué está frenando ese crecimiento — sin rodeos, sin genéricos.
+      </p>
+      <a class="diag-btn" href="formulario.html">
+        Agenda tu Diagnóstico Gratuito
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="diag-card">
+      <div class="diag-card-title">¿Qué recibes al finalizar el diagnóstico?</div>
+      <div class="diag-item">
+        <div class="diag-icon">🔍</div>
+        <div class="diag-item-text">
+          <strong>Radiografía de tu negocio</strong>
+          <span>Una visión clara de las áreas fiscal, financiera, operativa y estratégica</span>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-icon">⚠️</div>
+        <div class="diag-item-text">
+          <strong>Los problemas que te están frenando</strong>
+          <span>Identificamos los frenos reales de tu crecimiento y rentabilidad</span>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-icon">📊</div>
+        <div class="diag-item-text">
+          <strong>Foto general de tu situación actual</strong>
+          <span>Un reporte concreto que te explica exactamente dónde estás parado hoy</span>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-icon">📅</div>
+        <div class="diag-item-text">
+          <strong>Cita con un especialista de INTEGRA</strong>
+          <span>Te presentamos la metodología y un plan de acción con presupuesto personalizado</span>
+        </div>
+      </div>
+      <div class="diag-note">
+        Completamente <strong>gratuito</strong> · Sin compromiso · Resultados desde la primera sesión
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso-section">
+  <div class="proceso-inner">
+    <div class="proceso-header">
+      <span class="section-eyebrow">¿Cómo trabajamos?</span>
+      <h2 class="section-h2" style="color:var(--dark-text);">
+        De la primera conversación al<br><em>incremento real en rentabilidad</em>
+      </h2>
+      <p style="color:#4a6288; font-size:16px; line-height:1.75; max-width:620px; margin:0 auto;">
+        Nuestro éxito se mide con un solo indicador: que tu negocio gane más. Cada paso del proceso está diseñado para llegar a ese resultado.
+      </p>
+    </div>
+    <div class="pasos">
+
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <div class="paso-body">
+          <h3>Diagnóstico Estratégico 360° — Gratuito</h3>
+          <p>Analizamos tu negocio en las 4 áreas: fiscal, financiera, operativa y estratégica. Hacemos las preguntas correctas para entender tu situación real, no la que parece desde afuera.</p>
+          <span class="paso-tag">✓ Completamente gratuito · Sin compromiso</span>
+        </div>
+      </div>
+
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <div class="paso-body">
+          <h3>Recibes tu Reporte de Diagnóstico</h3>
+          <p>Al finalizar la sesión obtienes una foto general y clara de tu negocio: los principales problemas que están frenando tu crecimiento, las áreas de mayor riesgo y las oportunidades que no estás aprovechando.</p>
+          <span class="paso-tag">Entregable: Reporte de situación actual</span>
+        </div>
+      </div>
+
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <div class="paso-body">
+          <h3>Sesión con un Especialista INTEGRA</h3>
+          <p>Un miembro de nuestro equipo —con experiencia en empresas de primer nivel— se reúne contigo para presentarte la metodología propuesta, explicarte cómo atacamos los retos identificados y responderte todas tus dudas.</p>
+          <span class="paso-tag">Entregable: Propuesta + Plan de acción + Presupuesto</span>
+        </div>
+      </div>
+
+      <div class="paso">
+        <div class="paso-num">4</div>
+        <div class="paso-body">
+          <h3>Implementación y Seguimiento de Resultados</h3>
+          <p>Trabajamos contigo en la implementación. El indicador que más nos importa es uno: que tu negocio sea más rentable. Medimos, ajustamos y acompañamos hasta que los resultados se vean en los números.</p>
+          <span class="paso-tag">KPI principal: Incremento en rentabilidad del negocio</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-inner">
+    <h2>Tu negocio tiene más potencial<br><em>del que imaginas.</em></h2>
+    <p>El diagnóstico gratuito es el primer paso para descubrirlo.<br>30 minutos de conversación pueden cambiar la dirección de tu negocio.</p>
+    <a class="btn-main" href="formulario.html">
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Agenda tu Diagnóstico Estratégico Gratuito
+    </a>
+    <div class="final-reassure">
+      <span class="reassure-item">Sin costo ni compromiso</span>
+      <span class="reassure-item">30–45 minutos</span>
+      <span class="reassure-item">Resultados concretos desde la primera sesión</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-copy">© 2025 INTEGRA Inteligencia Integral. Todos los derechos reservados.</span>
+  <div class="footer-links">
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="formulario.html">Contacto</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/523316036599?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20INTEGRA" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+(function(){
+  var h=document.getElementById('hbg'),m=document.getElementById('mob');
+  if(!h||!m)return;
+  h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}});
+})();
+</script>
+</body>
+</html>

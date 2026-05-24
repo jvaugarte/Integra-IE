@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Estratégico | INTEGRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#071A35;--bg-deep:#040F1F;--gold:#D4AF37;--gold-light:#EBC75C;--gold-pale:rgba(212,175,55,0.12);--gold-mid:rgba(212,175,55,0.25);--light:#E8F1FB;--dark-text:#0E2A55;--muted:#3a5278;--line:rgba(255,255,255,0.10);}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:white;overflow-x:hidden;min-height:100vh;}
+a{text-decoration:none;}
+img{max-width:100%;height:auto;display:block;}
+
+/* PAGE */
+.page{padding:56px 20px 72px;display:flex;flex-direction:column;align-items:center;}
+/* TRUST BAR */
+.trust-bar{max-width:680px;width:100%;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:32px;padding:14px 20px;background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.18);border-radius:12px;}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.68);}
+.trust-item::before{content:'✓';color:var(--gold);font-weight:700;font-size:13px;}
+/* FORM CARD */
+.form-card{background:white;color:var(--dark-text);max-width:680px;width:100%;border-radius:20px;border:2px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,0.22);overflow:hidden;}
+.form-header{background:var(--dark-text);padding:36px 40px 32px;text-align:center;}
+.form-header .eyebrow{display:inline-block;background:rgba(212,175,55,0.20);border:1px solid rgba(212,175,55,0.35);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+.form-header h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,4vw,2.2rem);font-weight:800;color:white;line-height:1.2;margin-bottom:12px;}
+.form-header p{font-size:14.5px;color:rgba(255,255,255,0.70);line-height:1.75;}
+.form-body{padding:36px 40px;}
+/* BLOCKS */
+.block-header{margin-top:28px;padding-top:24px;border-top:1px solid rgba(14,42,85,0.10);}
+.block-header:first-child{margin-top:0;padding-top:0;border-top:none;}
+.block-header h2{font-size:16px;font-weight:700;color:var(--dark-text);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.block-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--dark-text);color:white;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;}
+.block-header p{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+/* FIELDS */
+.field{margin-bottom:18px;}
+.field:last-child{margin-bottom:0;}
+label{display:block;font-size:13.5px;font-weight:600;color:var(--dark-text);margin-bottom:7px;line-height:1.4;}
+input,textarea,select{padding:12px 14px;border-radius:10px;border:1.5px solid rgba(14,42,85,0.18);font-size:15px;width:100%;font-family:'DM Sans',sans-serif;background:white;color:var(--dark-text);transition:border-color 0.2s,box-shadow 0.2s;outline:none;-webkit-appearance:none;appearance:none;}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,0.14);}
+input::placeholder,textarea::placeholder{color:rgba(14,42,85,0.35);}
+textarea{min-height:110px;resize:vertical;}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230E2A55' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+/* PREVIEW */
+.etapa-preview{display:none;margin-top:4px;padding:14px 16px;border-radius:10px;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.25);}
+.etapa-preview.visible{display:block;}
+.etapa-preview-title{font-size:13px;font-weight:700;color:var(--dark-text);margin-bottom:4px;}
+.etapa-preview-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.etapa-alerta{margin-top:8px;padding:10px 12px;border-radius:8px;background:rgba(212,175,55,0.10);border-left:3px solid var(--gold);font-size:12.5px;color:#7a5800;font-weight:600;line-height:1.5;}
+/* SUBMIT */
+.submit-wrap{margin-top:28px;}
+.submit-btn{width:100%;background:var(--gold);border:none;color:var(--bg);padding:16px;font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;border-radius:12px;cursor:pointer;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 5px 18px rgba(212,175,55,0.28);display:flex;align-items:center;justify-content:center;gap:8px;}
+.submit-btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(212,175,55,0.38);}
+.submit-btn:active{transform:translateY(0);}
+.submit-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.6;}
+#mensajeEstado{margin-top:16px;text-align:center;font-size:14px;font-weight:600;color:var(--dark-text);line-height:1.5;min-height:20px;}
+/* FOOTER */
+.footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:22px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.35);transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+@media(max-width:900px){}
+@media(max-width:600px){.page{padding:32px 12px 56px;}.form-header{padding:28px 22px 24px;}.form-body{padding:24px 22px;}.field-row{grid-template-columns:1fr;}.footer{flex-direction:column;align-items:center;text-align:center;padding:18px 16px;}}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;background:rgba(7,26,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);position:sticky;top:0;z-index:1000;}
+.logo img{height:82px;width:auto;}
+.menu{display:flex;gap:26px;flex:1;justify-content:center;}
+.menu a{color:rgba(255,255,255,0.80);font-size:15px;font-weight:500;letter-spacing:0.2px;transition:color 0.2s;white-space:nowrap;}
+.menu a:hover,.menu a.active{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--bg);padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;transition:background 0.2s,transform 0.15s;flex-shrink:0;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px 6px;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;background:rgba(7,26,53,0.98);border-top:1px solid rgba(255,255,255,0.10);padding:8px 0 16px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:rgba(255,255,255,0.82);font-size:16px;font-weight:500;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
+.mobile-menu .m-cta{margin:14px 24px 0;background:var(--gold);color:var(--bg);text-align:center;padding:14px;border-radius:8px;font-weight:700;font-size:15px;border-bottom:none;}
+.mobile-menu .m-cta:hover{background:var(--gold-light);}
+@media(max-width:900px){.navbar{padding:12px 20px;}.menu{display:none;}.nav-cta{display:none;}.hamburger{display:flex;}}
+</style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><a href="INDEX.html"><img src="logo_2.png" alt="INTEGRA"></a></div>
+  <nav class="menu"><a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a></nav>
+  <button class="hamburger" id="hbg" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mob">
+  <a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a>
+</nav>
+
+
+
+
+<section class="page">
+
+  <div class="trust-bar">
+    <span class="trust-item">Completamente gratuito</span>
+    <span class="trust-item">Sin compromiso</span>
+    <span class="trust-item">Resultados desde la primera sesión</span>
+  </div>
+
+  <div class="form-card">
+    <div class="form-header">
+      <div class="eyebrow">Diagnóstico estratégico</div>
+      <h1>Descubre en qué etapa está tu negocio</h1>
+      <p>Comparte algunos datos para identificar en qué etapa se encuentra tu empresa y dirigirte al diagnóstico más adecuado para ti.</p>
+    </div>
+
+    <div class="form-body">
+      <form id="diagnosticoForm">
+
+        <div class="block-header">
+          <h2><span class="block-num">1</span>Datos de contacto</h2>
+          <p>Para personalizar tu diagnóstico y darte seguimiento.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="empresa">Nombre de tu empresa</label>
+            <input id="empresa" type="text" placeholder="Mi empresa" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" type="email" placeholder="hola@miempresa.com" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" placeholder="+52 33 0000 0000" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="descripcion">Cuéntanos brevemente sobre tu negocio</label>
+          <textarea id="descripcion" placeholder="Qué hace tu empresa, a quién va dirigida, en qué ciudad opera…" required></textarea>
+        </div>
+
+        <div class="block-header">
+          <h2><span class="block-num">2</span>Clasificación de etapa</h2>
+          <p>4 preguntas para identificar si tu negocio está en etapa de idea, startup, operacional o escalable.</p>
+        </div>
+
+        <div class="field">
+          <label for="ventasActuales">¿Cuál describe mejor la situación actual de tus ventas?</label>
+          <select id="ventasActuales" required>
+            <option value="">Selecciona una opción</option>
+            <option value="A">Aún no genero ventas</option>
+            <option value="B">Genero ventas ocasionales o irregulares</option>
+            <option value="C">Genero ventas constantes cada mes</option>
+            <option value="D">Genero ventas constantes y busco crecer o expandirme</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="montoVentas">¿Cuál es tu rango aproximado de ventas mensuales?</label>
+          <select id="montoVentas" required>
+            <option value="">Selecciona una opción</option>
+            <option value="A">$0 a $10,000 MXN mensuales</option>
+            <option value="B">$10,001 a $80,000 MXN mensuales</option>
+            <option value="C">$80,001 a $300,000 MXN mensuales</option>
+            <option value="D">Más de $300,000 MXN mensuales</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tiempoFuncionamiento">¿Cuánto tiempo tiene funcionando tu negocio?</label>
+          <select id="tiempoFuncionamiento" required>
+            <option value="">Selecciona una opción</option>
+            <option value="A">Aún no inicia o tiene menos de 3 meses</option>
+            <option value="B">De 3 meses a 1 año</option>
+            <option value="C">De 1 a 3 años</option>
+            <option value="D">Más de 3 años</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="numeroEmpleados">¿Cuántas personas trabajan en el negocio, incluyéndote?</label>
+          <select id="numeroEmpleados" required>
+            <option value="">Selecciona una opción</option>
+            <option value="A">Solo yo o aún no tengo equipo</option>
+            <option value="B">De 2 a 3 personas</option>
+            <option value="C">De 4 a 10 personas</option>
+            <option value="D">Más de 10 personas</option>
+          </select>
+        </div>
+
+        <div id="etapaPreview" class="etapa-preview"></div>
+
+        <div class="submit-wrap">
+          <button class="submit-btn" type="submit">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            Obtener mi diagnóstico gratuito
+          </button>
+          <p class="submit-note">Al continuar, uno de nuestros especialistas revisará tu información y te contactará en menos de 24 horas.</p>
+        </div>
+
+        <div id="mensajeEstado"></div>
+
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <span class="footer-copy">© 2025 INTEGRA Inteligencia Estratégica. Todos los derechos reservados.</span>
+  <div class="footer-links"><a href="servicios.html">Servicios</a><a href="nosotros.html">Nosotros</a><a href="como-funciona.html">Cómo Funciona</a></div>
+</footer>
+
+
+<script>
+(function(){
+  var h=document.getElementById('hbg'),m=document.getElementById('mob');
+  if(!h||!m)return;
+  h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}});
+})();
+
+const WEBAPP_URL='https://script.google.com/macros/s/AKfycbz_96q0NKjb9PQzfquuGXxl6pdAgE1aOnFc_vm9FihXBUJM9rG8CN05MveHkpHkvUMCyQ/exec';
+
+const selVentas=document.getElementById('ventasActuales');
+const selMonto=document.getElementById('montoVentas');
+const selTiempo=document.getElementById('tiempoFuncionamiento');
+const selEmpleados=document.getElementById('numeroEmpleados');
+const preview=document.getElementById('etapaPreview');
+const msgs=document.getElementById('mensajeEstado');
+
+const pts={A:1,B:2,C:3,D:4};
+const etapaNombres={idea:'Idea',startup:'Startup',operacional:'Operacional',escalable:'Escalable'};
+const etapaDesc={
+  idea:'Tu negocio está en la etapa más temprana. El diagnóstico se enfocará en validar tu modelo y sentar las bases.',
+  startup:'Tu negocio está despegando. El diagnóstico identificará cómo estabilizar y estructurar el crecimiento.',
+  operacional:'Tu negocio opera de forma constante. El diagnóstico buscará ordenar, eficientar y preparar para escalar.',
+  escalable:'Tu negocio está listo para crecer. El diagnóstico definirá la estrategia de expansión más adecuada.'
+};
+
+function clasificar(p){
+  if(p<=5)return'idea';
+  if(p<=9)return'startup';
+  if(p<=13)return'operacional';
+  return'escalable';
+}
+
+function calcular(){
+  var r=[selVentas.value,selMonto.value,selTiempo.value,selEmpleados.value];
+  if(r.some(function(v){return!v;}))return null;
+  var total=r.reduce(function(s,v){return s+pts[v];},0);
+  var etapa=clasificar(total);
+  var alerta='';
+  if(selVentas.value==='A'){
+    etapa='idea';
+    alerta='Sin ventas activas: clasificación asignada como etapa Idea.';
+  } else if(selVentas.value==='B'&&(etapa==='operacional'||etapa==='escalable')){
+    alerta='El negocio tiene estructura pero las ventas son irregulares — esto es una brecha clave que el diagnóstico abordará.';
+  }
+  return{etapa:etapa,etapaNombre:etapaNombres[etapa],puntaje:total,etapaPorPuntaje:clasificar(total),alerta:alerta};
+}
+
+function actualizarPreview(){
+  var r=calcular();
+  if(!r){preview.classList.remove('visible');preview.innerHTML='';return;}
+  preview.classList.add('visible');
+  var html='<div class="etapa-preview-title">Clasificación preliminar: '+r.etapaNombre+'</div>'
+          +'<div class="etapa-preview-desc">'+etapaDesc[r.etapa]+'</div>';
+  if(r.alerta)html+='<div class="etapa-alerta">'+r.alerta+'</div>';
+  preview.innerHTML=html;
+}
+
+[selVentas,selMonto,selTiempo,selEmpleados].forEach(function(s){
+  s.addEventListener('change',actualizarPreview);
+});
+
+document.getElementById('diagnosticoForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var r=calcular();
+  if(!r){alert('Por favor responde todas las preguntas de clasificación.');return;}
+  var nombre=document.getElementById('nombre').value.trim();
+  var correo=document.getElementById('correo').value.trim();
+  var telefono=document.getElementById('telefono').value.trim();
+  var empresa=document.getElementById('empresa').value.trim();
+  var descripcion=document.getElementById('descripcion').value.trim();
+  if(!nombre||!correo||!telefono||!empresa||!descripcion){
+    alert('Por favor completa todos los campos obligatorios.');
+    return;
+  }
+  msgs.textContent='Redirigiendo al diagnóstico para etapa '+r.etapaNombre+'…';
+  var payload={
+    fecha:new Date().toLocaleDateString('es-MX'),
+    nombre:nombre,correo:correo,telefono:telefono,empresa:empresa,descripcion:descripcion,
+    ventasActuales:selVentas.options[selVentas.selectedIndex].text,
+    montoVentas:selMonto.options[selMonto.selectedIndex].text,
+    tiempoFuncionamiento:selTiempo.options[selTiempo.selectedIndex].text,
+    numeroEmpleados:selEmpleados.options[selEmpleados.selectedIndex].text,
+    respuestaVentasActuales:selVentas.value,
+    respuestaMontoVentas:selMonto.value,
+    respuestaTiempoFuncionamiento:selTiempo.value,
+    respuestaNumeroEmpleados:selEmpleados.value,
+    puntajeEtapa:r.puntaje,
+    etapaPorPuntaje:r.etapaPorPuntaje,
+    etapaPorPuntajeNombre:etapaNombres[r.etapaPorPuntaje],
+    etapa:r.etapa,
+    etapaNombre:r.etapaNombre,
+    alertaVentas:r.alerta
+  };
+  window.location.href=WEBAPP_URL+'?'+new URLSearchParams(payload).toString();
+});
+</script>
+</body>
+</html>
