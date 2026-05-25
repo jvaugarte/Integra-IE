@@ -14,7 +14,20 @@ html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:white;overflow-x:hidden;min-height:100vh;}
 a{text-decoration:none;}
 img{max-width:100%;height:auto;display:block;}
-
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;background:rgba(7,26,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000;}
+.logo img{height:82px;width:auto;}
+.menu{display:flex;gap:26px;flex:1;justify-content:center;}
+.menu a{color:rgba(255,255,255,0.80);font-size:15px;font-weight:500;letter-spacing:0.2px;transition:color 0.2s;white-space:nowrap;}
+.menu a:hover{color:var(--gold);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;background:rgba(7,26,53,0.98);border-top:1px solid var(--line);padding:8px 0 16px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:rgba(255,255,255,0.82);font-size:16px;font-weight:500;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
+.mobile-menu a:hover{color:var(--gold);}
 /* PAGE */
 .page{padding:56px 20px 72px;display:flex;flex-direction:column;align-items:center;}
 /* TRUST BAR */
@@ -63,41 +76,28 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .footer-links{display:flex;gap:20px;}
 .footer-links a{font-size:13px;color:rgba(255,255,255,0.35);transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
-@media(max-width:900px){}
+@media(max-width:900px){.navbar{padding:12px 24px;}.menu{display:none;}.hamburger{display:flex;}}
 @media(max-width:600px){.page{padding:32px 12px 56px;}.form-header{padding:28px 22px 24px;}.form-body{padding:24px 22px;}.field-row{grid-template-columns:1fr;}.footer{flex-direction:column;align-items:center;text-align:center;padding:18px 16px;}}
-.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;background:rgba(7,26,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);position:sticky;top:0;z-index:1000;}
-.logo img{height:82px;width:auto;}
-.menu{display:flex;gap:26px;flex:1;justify-content:center;}
-.menu a{color:rgba(255,255,255,0.80);font-size:15px;font-weight:500;letter-spacing:0.2px;transition:color 0.2s;white-space:nowrap;}
-.menu a:hover,.menu a.active{color:var(--gold);}
-.nav-cta{background:var(--gold);color:var(--bg);padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;transition:background 0.2s,transform 0.15s;flex-shrink:0;}
-.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px 6px;flex-direction:column;gap:5px;flex-shrink:0;}
-.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all 0.3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;flex-direction:column;background:rgba(7,26,53,0.98);border-top:1px solid rgba(255,255,255,0.10);padding:8px 0 16px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{color:rgba(255,255,255,0.82);font-size:16px;font-weight:500;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s;}
-.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
-.mobile-menu .m-cta{margin:14px 24px 0;background:var(--gold);color:var(--bg);text-align:center;padding:14px;border-radius:8px;font-weight:700;font-size:15px;border-bottom:none;}
-.mobile-menu .m-cta:hover{background:var(--gold-light);}
-@media(max-width:900px){.navbar{padding:12px 20px;}.menu{display:none;}.nav-cta{display:none;}.hamburger{display:flex;}}
 </style>
 </head>
 <body>
+
 <header class="navbar">
   <div class="logo"><a href="INDEX.html"><img src="logo_2.png" alt="INTEGRA"></a></div>
-  <nav class="menu"><a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a></nav>
+  <nav class="menu">
+    <a href="servicios.html">Servicios</a>
+    <a href="como-funciona.html">Cómo Funciona</a>
+    <a href="casos-exito.html">Casos de Éxito</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
   <button class="hamburger" id="hbg" aria-label="Menú"><span></span><span></span><span></span></button>
 </header>
 <nav class="mobile-menu" id="mob">
-  <a href="servicios.html">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="como-funciona.html">Cómo Funciona</a>
+  <a href="casos-exito.html">Casos de Éxito</a>
+  <a href="nosotros.html">Nosotros</a>
 </nav>
-
-
-
 
 <section class="page">
 
@@ -149,7 +149,7 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 
         <div class="block-header">
           <h2><span class="block-num">2</span>Clasificación de etapa</h2>
-          <p>4 preguntas para identificar si tu negocio está en etapa de Lanzamiento, Startup, Consolidación o Escalable.</p>
+          <p>4 preguntas para identificar si tu negocio está en etapa de lanzamiento, startup, consolidación o escalabilidad.</p>
         </div>
 
         <div class="field">
@@ -216,16 +216,11 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
   <div class="footer-links"><a href="servicios.html">Servicios</a><a href="nosotros.html">Nosotros</a><a href="como-funciona.html">Cómo Funciona</a></div>
 </footer>
 
-
 <script>
-(function(){
-  var h=document.getElementById('hbg'),m=document.getElementById('mob');
-  if(!h||!m)return;
-  h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});
-  document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target)){h.classList.remove('open');m.classList.remove('open');}});
-})();
-
 const WEBAPP_URL='https://script.google.com/macros/s/AKfycbz_96q0NKjb9PQzfquuGXxl6pdAgE1aOnFc_vm9FihXBUJM9rG8CN05MveHkpHkvUMCyQ/exec';
+const hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mob.classList.toggle('open');});
+document.addEventListener('click',e=>{if(!hbg.contains(e.target)&&!mob.contains(e.target)){hbg.classList.remove('open');mob.classList.remove('open');}});
 
 const selVentas=document.getElementById('ventasActuales');
 const selMonto=document.getElementById('montoVentas');
@@ -235,81 +230,59 @@ const preview=document.getElementById('etapaPreview');
 const msgs=document.getElementById('mensajeEstado');
 
 const pts={A:1,B:2,C:3,D:4};
-const etapaNombres={Lanzamiento:'Lanzamiento',startup:'Startup',Consolidación:'Consolidación',Escalable:'Escalable'};
+const etapaNombres={idea:'Lanzamiento',startup:'Startup',operacional:'Consolidación',escalable:'Escalabilidad'};
 const etapaDesc={
-  Lanzamiento:'Tu negocio está en la etapa más temprana. El diagnóstico se enfocará en validar tu modelo y sentar las bases.',
+  idea:'Tu negocio está en la etapa de lanzamiento. El diagnóstico se enfocará en validar tu modelo y sentar las bases.',
   startup:'Tu negocio está despegando. El diagnóstico identificará cómo estabilizar y estructurar el crecimiento.',
-  consolidación:'Tu negocio opera de forma constante. El diagnóstico buscará ordenar, eficientar y preparar para escalar.',
+  operacional:'Tu negocio opera de forma constante. El diagnóstico buscará ordenar, eficientar y consolidar para escalar.',
   escalable:'Tu negocio está listo para crecer. El diagnóstico definirá la estrategia de expansión más adecuada.'
 };
 
 function clasificar(p){
-  if(p<=5)return'i';
-  if(p<=9)return'startup';
-  if(p<=13)return'consolidación';
-  return'escalable';
+  if(p<=5)return'idea';if(p<=9)return'startup';if(p<=13)return'operacional';return'escalable';
 }
-
 function calcular(){
-  var r=[selVentas.value,selMonto.value,selTiempo.value,selEmpleados.value];
-  if(r.some(function(v){return!v;}))return null;
-  var total=r.reduce(function(s,v){return s+pts[v];},0);
-  var etapa=clasificar(total);
-  var alerta='';
-  if(selVentas.value==='A'){
-    etapa='Lanzamiento';
-    alerta='Sin ventas activas: clasificación asignada como etapa Lanzamiento.';
-  } else if(selVentas.value==='B'&&(etapa==='consolidación'||etapa==='escalable')){
-    alerta='El negocio tiene estructura pero las ventas son irregulares — esto es una brecha clave que el diagnóstico abordará.';
-  }
-  return{etapa:etapa,etapaNombre:etapaNombres[etapa],puntaje:total,etapaPorPuntaje:clasificar(total),alerta:alerta};
+  const r=[selVentas.value,selMonto.value,selTiempo.value,selEmpleados.value];
+  if(r.some(v=>!v))return null;
+  const total=r.reduce((s,v)=>s+pts[v],0);
+  let etapa=clasificar(total);
+  let alerta='';
+  if(selVentas.value==='A'){etapa='idea';alerta='Sin ventas activas: clasificación asignada como etapa Lanzamiento.';}
+  else if(selVentas.value==='B'&&(etapa==='operacional'||etapa==='escalable')){alerta='El negocio tiene estructura pero las ventas son irregulares — esto es una brecha clave que el diagnóstico abordará.';}
+  return{etapa,etapaNombre:etapaNombres[etapa],puntaje:total,etapaPorPuntaje:clasificar(total),alerta};
 }
-
 function actualizarPreview(){
-  var r=calcular();
+  const r=calcular();
   if(!r){preview.classList.remove('visible');preview.innerHTML='';return;}
   preview.classList.add('visible');
-  var html='<div class="etapa-preview-title">Clasificación preliminar: '+r.etapaNombre+'</div>'
-          +'<div class="etapa-preview-desc">'+etapaDesc[r.etapa]+'</div>';
-  if(r.alerta)html+='<div class="etapa-alerta">'+r.alerta+'</div>';
+  let html=`<div class="etapa-preview-title">Clasificación preliminar: ${r.etapaNombre}</div><div class="etapa-preview-desc">${etapaDesc[r.etapa]}</div>`;
+  if(r.alerta)html+=`<div class="etapa-alerta">${r.alerta}</div>`;
   preview.innerHTML=html;
 }
-
-[selVentas,selMonto,selTiempo,selEmpleados].forEach(function(s){
-  s.addEventListener('change',actualizarPreview);
-});
+[selVentas,selMonto,selTiempo,selEmpleados].forEach(s=>s.addEventListener('change',actualizarPreview));
 
 document.getElementById('diagnosticoForm').addEventListener('submit',function(e){
   e.preventDefault();
-  var r=calcular();
-  if(!r){alert('Por favor responde todas las preguntas de clasificación.');return;}
-  var nombre=document.getElementById('nombre').value.trim();
-  var correo=document.getElementById('correo').value.trim();
-  var telefono=document.getElementById('telefono').value.trim();
-  var empresa=document.getElementById('empresa').value.trim();
-  var descripcion=document.getElementById('descripcion').value.trim();
-  if(!nombre||!correo||!telefono||!empresa||!descripcion){
-    alert('Por favor completa todos los campos obligatorios.');
-    return;
-  }
+  const r=calcular();
+  if(!r){alert('Por favor responde todas las preguntas.');return;}
+  const nombre=document.getElementById('nombre').value.trim();
+  const correo=document.getElementById('correo').value.trim();
+  const telefono=document.getElementById('telefono').value.trim();
+  const empresa=document.getElementById('empresa').value.trim();
+  const descripcion=document.getElementById('descripcion').value.trim();
+  if(!nombre||!correo||!telefono||!empresa||!descripcion){alert('Por favor completa todos los campos.');return;}
   msgs.textContent='Redirigiendo al diagnóstico para etapa '+r.etapaNombre+'…';
-  var payload={
-    fecha:new Date().toLocaleDateString('es-MX'),
-    nombre:nombre,correo:correo,telefono:telefono,empresa:empresa,descripcion:descripcion,
+  const payload={
+    fecha:new Date().toLocaleDateString('es-MX'),nombre,correo,telefono,empresa,descripcion,
     ventasActuales:selVentas.options[selVentas.selectedIndex].text,
     montoVentas:selMonto.options[selMonto.selectedIndex].text,
     tiempoFuncionamiento:selTiempo.options[selTiempo.selectedIndex].text,
     numeroEmpleados:selEmpleados.options[selEmpleados.selectedIndex].text,
-    respuestaVentasActuales:selVentas.value,
-    respuestaMontoVentas:selMonto.value,
-    respuestaTiempoFuncionamiento:selTiempo.value,
-    respuestaNumeroEmpleados:selEmpleados.value,
-    puntajeEtapa:r.puntaje,
-    etapaPorPuntaje:r.etapaPorPuntaje,
+    respuestaVentasActuales:selVentas.value,respuestaMontoVentas:selMonto.value,
+    respuestaTiempoFuncionamiento:selTiempo.value,respuestaNumeroEmpleados:selEmpleados.value,
+    puntajeEtapa:r.puntaje,etapaPorPuntaje:r.etapaPorPuntaje,
     etapaPorPuntajeNombre:etapaNombres[r.etapaPorPuntaje],
-    etapa:r.etapa,
-    etapaNombre:r.etapaNombre,
-    alertaVentas:r.alerta
+    etapa:r.etapa,etapaNombre:r.etapaNombre,alertaVentas:r.alerta
   };
   window.location.href=WEBAPP_URL+'?'+new URLSearchParams(payload).toString();
 });
