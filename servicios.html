@@ -200,24 +200,6 @@ img{ max-width:100%; height:auto; display:block; }
   margin:0 auto 56px auto;
 }
 
-/* DIAGRAMA WRAPPER */
-.diagrama-wrapper{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(212,175,55,0.20);
-  border-radius:20px;
-  padding:40px 28px 36px;
-  margin-bottom:56px;
-  overflow-x:auto;
-}
-
-/* SVG nodes dentro del diagrama */
-.diagrama-wrapper svg .nodo-gold rect,
-.diagrama-wrapper svg .nodo-gold ellipse{
-  fill:#D4AF37;
-  stroke:#B8962E;
-}
-.diagrama-wrapper svg .nodo-gold text{ fill:#071A35; }
-
 /* FASES EXPLICADAS */
 .fases-grid{
   display:grid;
@@ -416,7 +398,7 @@ img{ max-width:100%; height:auto; display:block; }
   .cta-final{ padding-top:64px; }
   .card, .paso, .info-box{ padding:24px 18px; }
   .btn-primary, .btn-secondary, .cta-final .boton{ width:100%; max-width:360px; }
-  .diagrama-wrapper{ padding:20px 10px; }
+  
   .ciclo-banner{ flex-direction:column; text-align:center; }
 }
 
@@ -470,9 +452,6 @@ img{ max-width:100%; height:auto; display:block; }
   <a href="servicios.html" class="active">Servicios</a><a href="como-funciona.html">Cómo Funciona</a><a href="casos-exito.html">Casos de Éxito</a><a href="nosotros.html">Nosotros</a>
   <a class="m-cta" href="formulario.html">Diagnóstico Gratuito</a>
 </nav>
-
-
-
 
 <!-- =================== HERO =================== -->
 <section class="hero">
@@ -597,297 +576,21 @@ img{ max-width:100%; height:auto; display:block; }
   </div>
 </section>
 
-<!-- =================== METODOLOGÍA INTEGRA (NUEVA SECCIÓN) =================== -->
-<section class="metodologia">
-  <div class="container">
-
-    <div class="metodologia-header">
-      <div class="etiqueta">Nuestra metodología</div>
-      <h2>Cómo convertimos tu diagnóstico en resultados reales</h2>
-      <p>
-        No trabajamos con asesoría genérica. Cada proyecto comienza con un diagnóstico estructurado que identifica exactamente dónde está tu negocio hoy, qué tan profunda es cada brecha y cuál es la ruta óptima para resolverla. Lo que ves abajo es el mismo sistema que aplicamos contigo, paso a paso.
-      </p>
+<!-- PUENTE A CÓMO FUNCIONA -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <div class="bridge-left">
+      <span class="sec-eyebrow">¿Cómo lo hacemos?</span>
+      <h2>Cada servicio comienza con<br>un <em>diagnóstico preciso</em></h2>
+      <p>No intervenimos en ningún área sin entender primero el estado real de tu negocio. Nuestro sistema diagnóstico identifica exactamente dónde están las brechas, con qué intensidad hay que actuar y en qué orden.</p>
+      <a class="btn-main" href="como-funciona.html">Ver la metodología completa →</a>
     </div>
-
-    <!-- DIAGRAMA SVG -->
-    <div class="diagrama-wrapper">
-      <svg width="100%" viewBox="0 0 900 820" xmlns="http://www.w3.org/2000/svg" style="font-family:Arial,Helvetica,sans-serif;">
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-          <marker id="arr-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
-
-        <!-- FILA 0: TÍTULO DEL DIAGRAMA -->
-        <rect x="150" y="16" width="600" height="44" rx="8" fill="rgba(212,175,55,0.15)" stroke="#D4AF37" stroke-width="1"/>
-        <text x="450" y="38" text-anchor="middle" dominant-baseline="central" fill="#D4AF37" font-size="14" font-weight="700">Hoja de ruta INTEGRA · Diagnóstico → Análisis → Seguimiento → Solución</text>
-
-        <!-- FILA 1: 3 PILARES DE MEJORA -->
-        <text x="450" y="80" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" letter-spacing="1.5">ETAPA 1 — DIAGNÓSTICO MULTIDIMENSIONAL</text>
-
-        <!-- Pilar 1 -->
-        <rect x="30" y="90" width="240" height="90" rx="8" fill="rgba(34,120,180,0.18)" stroke="rgba(34,120,180,0.60)" stroke-width="1"/>
-        <text x="150" y="112" text-anchor="middle" fill="#7EC8F5" font-size="13" font-weight="700">Puntuación por dimensión</text>
-        <text x="150" y="132" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11">6 áreas evaluadas con escala 1–4</text>
-        <text x="150" y="150" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Comercial · Fiscal · Finanzas</text>
-        <text x="150" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Operación · Admin · Marketing</text>
-
-        <!-- Pilar 2 -->
-        <rect x="330" y="90" width="240" height="90" rx="8" fill="rgba(212,175,55,0.14)" stroke="rgba(212,175,55,0.50)" stroke-width="1"/>
-        <text x="450" y="112" text-anchor="middle" fill="#D4AF37" font-size="13" font-weight="700">Nivel de severidad</text>
-        <text x="450" y="132" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11">Promedio global determina</text>
-        <text x="450" y="150" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">qué tan urgente es actuar</text>
-        <text x="450" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">y con qué intensidad</text>
-
-        <!-- Pilar 3 -->
-        <rect x="630" y="90" width="240" height="90" rx="8" fill="rgba(227,82,48,0.15)" stroke="rgba(227,82,48,0.50)" stroke-width="1"/>
-        <text x="750" y="112" text-anchor="middle" fill="#F4937A" font-size="13" font-weight="700">Arquetipo del negocio</text>
-        <text x="750" y="132" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11">Etapa + foco + severidad</text>
-        <text x="750" y="150" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">= perfil, riesgo dominante</text>
-        <text x="750" y="165" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">y acción recomendada</text>
-
-        <!-- Flechas convergentes -->
-        <line x1="150" y1="180" x2="390" y2="214" stroke="#D4AF37" stroke-width="1" marker-end="url(#arr)" stroke-dasharray="4 3"/>
-        <line x1="450" y1="180" x2="450" y2="214" stroke="#D4AF37" stroke-width="1" marker-end="url(#arr)" stroke-dasharray="4 3"/>
-        <line x1="750" y1="180" x2="510" y2="214" stroke="#D4AF37" stroke-width="1" marker-end="url(#arr)" stroke-dasharray="4 3"/>
-
-        <!-- DIAGNÓSTICO INTEGRADO -->
-        <rect x="220" y="214" width="460" height="54" rx="8" fill="rgba(212,175,55,0.20)" stroke="#D4AF37" stroke-width="1.5"/>
-        <text x="450" y="235" text-anchor="middle" fill="#D4AF37" font-size="14" font-weight="700">Diagnóstico completo integrado</text>
-        <text x="450" y="254" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Arquetipo · Foco dominante · Severidad · Entregables por área</text>
-
-        <line x1="450" y1="268" x2="450" y2="294" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arr)"/>
-
-        <!-- ETAPA 2 LABEL -->
-        <text x="450" y="290" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" letter-spacing="1.5">ETAPA 2 — PROCESO POST-DIAGNÓSTICO</text>
-
-        <!-- FASE 1: ANÁLISIS -->
-        <rect x="30" y="300" width="260" height="220" rx="8" fill="rgba(34,120,180,0.10)" stroke="rgba(34,120,180,0.45)" stroke-width="1"/>
-        <text x="160" y="322" text-anchor="middle" fill="#7EC8F5" font-size="13" font-weight="700">1 · Análisis</text>
-        <rect x="44" y="334" width="232" height="36" rx="6" fill="rgba(34,120,180,0.20)" stroke="rgba(34,120,180,0.35)" stroke-width="0.5"/>
-        <text x="160" y="347" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Análisis de Brechas</text>
-        <text x="160" y="361" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Situación actual vs. estado deseado</text>
-        <rect x="44" y="378" width="232" height="36" rx="6" fill="rgba(34,120,180,0.20)" stroke="rgba(34,120,180,0.35)" stroke-width="0.5"/>
-        <text x="160" y="391" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Levantamiento de Procesos</text>
-        <text x="160" y="405" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Inventario de actividades y flujos</text>
-        <rect x="44" y="422" width="232" height="36" rx="6" fill="rgba(34,120,180,0.20)" stroke="rgba(34,120,180,0.35)" stroke-width="0.5"/>
-        <text x="160" y="435" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Evaluación Financiera</text>
-        <text x="160" y="449" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">ROI, márgenes y business case</text>
-        <rect x="44" y="466" width="232" height="36" rx="6" fill="rgba(34,120,180,0.20)" stroke="rgba(34,120,180,0.35)" stroke-width="0.5"/>
-        <text x="160" y="479" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Estudios de observación</text>
-        <text x="160" y="493" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Encuestas y datos estadísticos</text>
-
-        <!-- FASE 2: SEGUIMIENTO -->
-        <rect x="320" y="300" width="260" height="220" rx="8" fill="rgba(34,164,71,0.10)" stroke="rgba(34,164,71,0.40)" stroke-width="1"/>
-        <text x="450" y="322" text-anchor="middle" fill="#4ade80" font-size="13" font-weight="700">2 · Seguimiento</text>
-        <rect x="334" y="334" width="232" height="36" rx="6" fill="rgba(34,164,71,0.18)" stroke="rgba(34,164,71,0.30)" stroke-width="0.5"/>
-        <text x="450" y="347" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Modelo de Gestión</text>
-        <text x="450" y="361" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Juntas · KPI · compromisos semanales</text>
-        <rect x="334" y="378" width="232" height="36" rx="6" fill="rgba(34,164,71,0.18)" stroke="rgba(34,164,71,0.30)" stroke-width="0.5"/>
-        <text x="450" y="391" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Indicadores Base</text>
-        <text x="450" y="405" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">KPI por área, fórmula y responsable</text>
-        <rect x="334" y="422" width="232" height="36" rx="6" fill="rgba(34,164,71,0.18)" stroke="rgba(34,164,71,0.30)" stroke-width="0.5"/>
-        <text x="450" y="435" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">COPAC</text>
-        <text x="450" y="449" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Comité interfuncional de mejora</text>
-        <rect x="334" y="466" width="232" height="36" rx="6" fill="rgba(34,164,71,0.18)" stroke="rgba(34,164,71,0.30)" stroke-width="0.5"/>
-        <text x="450" y="479" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Matriz de Auditoría</text>
-        <text x="450" y="493" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Verificación de cumplimiento</text>
-
-        <!-- FASE 3: SOLUCIÓN -->
-        <rect x="610" y="300" width="260" height="220" rx="8" fill="rgba(212,175,55,0.10)" stroke="rgba(212,175,55,0.40)" stroke-width="1"/>
-        <text x="740" y="322" text-anchor="middle" fill="#D4AF37" font-size="13" font-weight="700">3 · Solución</text>
-        <rect x="624" y="334" width="232" height="36" rx="6" fill="rgba(212,175,55,0.18)" stroke="rgba(212,175,55,0.30)" stroke-width="0.5"/>
-        <text x="740" y="347" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">PAI — Plan de Acción Inmediata</text>
-        <text x="740" y="361" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Acciones críticas · 30 días</text>
-        <rect x="624" y="378" width="232" height="36" rx="6" fill="rgba(212,175,55,0.18)" stroke="rgba(212,175,55,0.30)" stroke-width="0.5"/>
-        <text x="740" y="391" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">MCES</text>
-        <text x="740" y="405" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Causa · efecto · solución real</text>
-        <rect x="624" y="422" width="232" height="36" rx="6" fill="rgba(212,175,55,0.18)" stroke="rgba(212,175,55,0.30)" stroke-width="0.5"/>
-        <text x="740" y="435" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Manual PASER</text>
-        <text x="740" y="449" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Políticas · estándares · rutinas</text>
-        <rect x="624" y="466" width="232" height="36" rx="6" fill="rgba(212,175,55,0.18)" stroke="rgba(212,175,55,0.30)" stroke-width="0.5"/>
-        <text x="740" y="479" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="11">Role Charter</text>
-        <text x="740" y="493" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10">Responsabilidades claras por puesto</text>
-
-        <!-- Flechas hacia entregables -->
-        <line x1="160" y1="520" x2="160" y2="546" stroke="rgba(34,120,180,0.70)" stroke-width="1" marker-end="url(#arr-gray)"/>
-        <line x1="450" y1="520" x2="450" y2="546" stroke="rgba(34,164,71,0.70)" stroke-width="1" marker-end="url(#arr-gray)"/>
-        <line x1="740" y1="520" x2="740" y2="546" stroke="rgba(212,175,55,0.70)" stroke-width="1" marker-end="url(#arr-gray)"/>
-
-        <!-- ENTREGABLES -->
-        <text x="450" y="542" text-anchor="middle" fill="rgba(255,255,255,0.40)" font-size="11" letter-spacing="1.5">ENTREGABLES CLAVE</text>
-        <rect x="30" y="550" width="260" height="70" rx="8" fill="rgba(34,120,180,0.10)" stroke="rgba(34,120,180,0.35)" stroke-width="1"/>
-        <text x="160" y="568" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Mapa de brechas y prioridades</text>
-        <text x="160" y="583" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">White paper / flujo actual</text>
-        <text x="160" y="598" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Business case / ROI</text>
-        <text x="160" y="613" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Encuestas / observaciones</text>
-
-        <rect x="320" y="550" width="260" height="70" rx="8" fill="rgba(34,164,71,0.10)" stroke="rgba(34,164,71,0.30)" stroke-width="1"/>
-        <text x="450" y="568" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Tablero KPI base</text>
-        <text x="450" y="583" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Modelo de gestión semanal</text>
-        <text x="450" y="598" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Minuta COPAC</text>
-        <text x="450" y="613" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Checklist de auditoría</text>
-
-        <rect x="610" y="550" width="260" height="70" rx="8" fill="rgba(212,175,55,0.10)" stroke="rgba(212,175,55,0.30)" stroke-width="1"/>
-        <text x="740" y="568" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Plan de acción 30 días</text>
-        <text x="740" y="583" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Matriz causa-efecto-solución</text>
-        <text x="740" y="598" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Manual operativo PASER</text>
-        <text x="740" y="613" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Matriz de responsabilidades</text>
-
-        <!-- Flechas convergentes hacia ciclo -->
-        <line x1="160" y1="620" x2="390" y2="650" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#arr-gray)" stroke-dasharray="4 3"/>
-        <line x1="450" y1="620" x2="450" y2="650" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#arr-gray)" stroke-dasharray="4 3"/>
-        <line x1="740" y1="620" x2="510" y2="650" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#arr-gray)" stroke-dasharray="4 3"/>
-
-        <!-- CICLO DE MEJORA CONTINUA -->
-        <rect x="180" y="650" width="540" height="52" rx="8" fill="rgba(212,175,55,0.18)" stroke="#D4AF37" stroke-width="1.5"/>
-        <text x="450" y="669" text-anchor="middle" fill="#D4AF37" font-size="13" font-weight="700">Ciclo de mejora continua</text>
-        <text x="450" y="688" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="11">Diagnóstico → PAI → KPI → COPAC → nueva brecha → rediagnóstico trimestral</text>
-
-        <!-- HORIZONTE DE TIEMPO -->
-        <text x="450" y="726" text-anchor="middle" fill="rgba(255,255,255,0.40)" font-size="11" letter-spacing="1.5">HORIZONTE DE IMPLEMENTACIÓN</text>
-        <rect x="30" y="734" width="260" height="48" rx="8" fill="rgba(34,164,71,0.12)" stroke="rgba(34,164,71,0.35)" stroke-width="1"/>
-        <text x="160" y="752" text-anchor="middle" fill="#4ade80" font-size="13" font-weight="700">0 – 30 días</text>
-        <text x="160" y="770" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">PAI · brechas críticas · KPI base</text>
-
-        <rect x="320" y="734" width="260" height="48" rx="8" fill="rgba(212,175,55,0.10)" stroke="rgba(212,175,55,0.35)" stroke-width="1"/>
-        <text x="450" y="752" text-anchor="middle" fill="#D4AF37" font-size="13" font-weight="700">30 – 60 días</text>
-        <text x="450" y="770" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">MCES · PASER · juntas COPAC</text>
-
-        <rect x="610" y="734" width="260" height="48" rx="8" fill="rgba(227,82,48,0.10)" stroke="rgba(227,82,48,0.35)" stroke-width="1"/>
-        <text x="740" y="752" text-anchor="middle" fill="#f97316" font-size="13" font-weight="700">60 – 90 días</text>
-        <text x="740" y="770" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="10">Auditoría · gobierno · expansión</text>
-
-        <!-- REVISIÓN FINAL -->
-        <line x1="450" y1="782" x2="450" y2="800" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#arr-gray)"/>
-        <rect x="220" y="800" width="460" height="12" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-        <text x="450" y="807" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="10">↻  Revisión trimestral → ajuste del modelo → nuevo ciclo</text>
-      </svg>
-    </div>
-    <!-- FIN DIAGRAMA -->
-
-    <!-- FASES EXPLICADAS PARA EL CLIENTE -->
-    <div class="fases-grid">
-
-      <div class="fase-card">
-        <div class="fase-num">1</div>
-        <h3>Diagnóstico multidimensional</h3>
-        <p>
-          Antes de proponer cualquier solución, entendemos exactamente dónde está tu negocio hoy. Evaluamos 6 áreas clave —comercial, fiscal, financiera, operativa, administrativa y de marketing— con un sistema estructurado de preguntas que mide cada área del 1 al 4.
-        </p>
-        <p>
-          Con esa información calculamos la severidad de cada brecha, identificamos el patrón de problemas que tiene tu empresa (lo que llamamos el arquetipo) y determinamos qué dimensión es la que más te está frenando.
-        </p>
-        <ul class="fase-herramientas">
-          <li>Evaluación de 26 puntos por etapa del negocio</li>
-          <li>Identificación del foco dominante de debilidad</li>
-          <li>Clasificación por nivel de severidad</li>
-          <li>Asignación de arquetipo y perfil del negocio</li>
-        </ul>
-      </div>
-
-      <div class="fase-card">
-        <div class="fase-num">2</div>
-        <h3>Análisis y plan de acción</h3>
-        <p>
-          Con el diagnóstico en mano, construimos el mapa de brechas: una tabla que muestra dónde estás, dónde deberías estar y qué tan lejos estás de ese punto en cada área. Las brechas se ordenan por impacto real en tu negocio, no por lo que parece más urgente.
-        </p>
-        <p>
-          A partir de ese mapa diseñamos el Plan de Acción Inmediata (PAI): acciones concretas con responsable, fecha límite y entregable esperado para los primeros 30 días.
-        </p>
-        <ul class="fase-herramientas">
-          <li>Mapa de brechas priorizado por impacto</li>
-          <li>Levantamiento de procesos actuales</li>
-          <li>Business case con ROI esperado</li>
-          <li>PAI con acciones de los primeros 30 días</li>
-        </ul>
-      </div>
-
-      <div class="fase-card">
-        <div class="fase-num">3</div>
-        <h3>Implementación y seguimiento</h3>
-        <p>
-          No te dejamos con un reporte. Acompañamos la implementación semana a semana mediante un modelo de gestión con indicadores, juntas estructuradas y un comité de mejora (COPAC) que asegura que los compromisos se cumplan.
-        </p>
-        <p>
-          Cada brecha se resuelve con la herramienta correcta: el MCES para causas raíz, el Manual PASER para documentar procesos y el Role Charter para dejar claras las responsabilidades de cada persona.
-        </p>
-        <ul class="fase-herramientas">
-          <li>Tablero de KPI por área con revisión semanal</li>
-          <li>MCES para diagnóstico de causa raíz</li>
-          <li>Manuales operativos PASER</li>
-          <li>Auditoría de cumplimiento mensual</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- HORIZONTES DE TIEMPO -->
-    <div class="horizontes">
-      <div class="horizonte h1">
-        <div class="dias">0–30 días</div>
-        <p>Diagnóstico completo, mapa de brechas y Plan de Acción Inmediata con los puntos críticos resueltos</p>
-      </div>
-      <div class="horizonte h2">
-        <div class="dias">30–60 días</div>
-        <p>Herramientas de causa raíz aplicadas, manuales operativos en marcha y modelo de gestión semanal instalado</p>
-      </div>
-      <div class="horizonte h3">
-        <div class="dias">60–90 días</div>
-        <p>Auditoría de resultados, gobierno corporativo definido y base preparada para escalar</p>
-      </div>
-    </div>
-
-    <!-- CICLO CONTINUO -->
-    <div class="ciclo-banner">
-      <div class="ciclo-icon">↻</div>
-      <div>
-        <h3>Un sistema que no para en 90 días</h3>
-        <p>
-          Al terminar el primer ciclo realizamos un rediagnóstico trimestral para medir cuánto mejoró cada dimensión, ajustar el plan y atacar las siguientes brechas. Así el negocio sigue avanzando con método, no por inercia.
-        </p>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="met-cta">
-      <p>¿Quieres ver cómo aplica esta metodología a tu negocio específico?</p>
-      <a class="btn-primary" href="formulario.html">Solicita tu diagnóstico gratuito</a>
-    </div>
-
-  </div>
-</section>
-<!-- FIN METODOLOGÍA -->
-
-<!-- =================== PROCESO =================== -->
-<section class="proceso">
-  <div class="container">
-    <h2>Así trabajamos contigo</h2>
-    <div class="pasos">
-
-      <div class="paso">
-        <h3>Paso 1 — Diagnóstico estratégico</h3>
-        <p>Analizamos tu situación actual con nuestro sistema estructurado de 26 puntos por etapa del negocio, identificando riesgos, brechas críticas y oportunidades de mejora en las 6 dimensiones clave.</p>
-      </div>
-
-      <div class="paso">
-        <h3>Paso 2 — Mapa de brechas y plan de acción</h3>
-        <p>Construimos el mapa completo de brechas priorizado por impacto y diseñamos el Plan de Acción Inmediata con acciones concretas, responsables y fechas para los primeros 30 días.</p>
-      </div>
-
-      <div class="paso">
-        <h3>Paso 3 — Implementación acompañada</h3>
-        <p>Trabajamos contigo semana a semana: instalamos el modelo de gestión, aplicamos las herramientas de solución (MCES, PASER, Role Charter) y aseguramos que cada compromiso se cumpla con evidencia.</p>
-      </div>
-
-      <div class="paso">
-        <h3>Paso 4 — Auditoría y mejora continua</h3>
-        <p>Medimos resultados con indicadores reales, realizamos la auditoría de cumplimiento mensual y ejecutamos el rediagnóstico trimestral para ajustar el plan y seguir avanzando.</p>
-      </div>
-
+    <div class="bridge-card">
+      <div class="bridge-card-title">El proceso en 4 pasos</div>
+      <div class="bridge-item"><div class="bridge-icon">🔍</div><div class="bridge-item-text"><strong>Diagnóstico Estratégico 360°</strong><span>Evaluamos las 6 dimensiones clave de tu negocio — completamente gratuito</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">🗺</div><div class="bridge-item-text"><strong>Mapa de Brechas y Plan de Acción</strong><span>Construimos la hoja de ruta priorizada por impacto real en tu negocio</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">⚙️</div><div class="bridge-item-text"><strong>Implementación con herramientas correctas</strong><span>Resolvemos cada problema con la metodología diseñada para ese caso</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">📊</div><div class="bridge-item-text"><strong>Seguimiento y mejora continua</strong><span>Acompañamos semana a semana hasta que los resultados llegan a los números</span></div></div>
     </div>
   </div>
 </section>
@@ -936,7 +639,6 @@ img{ max-width:100%; height:auto; display:block; }
 <footer class="footer">
   © INTEGRA Inteligencia Estratégica. Todos los derechos reservados.
 </footer>
-
 
 <script>
 (function(){
