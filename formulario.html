@@ -149,7 +149,7 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 
         <div class="block-header">
           <h2><span class="block-num">2</span>Clasificación de etapa</h2>
-          <p>4 preguntas para identificar si tu negocio está en etapa de idea, startup, operacional o escalable.</p>
+          <p>4 preguntas para identificar si tu negocio está en etapa de Lanzamiento, Startup, Consolidación o Escalable.</p>
         </div>
 
         <div class="field">
@@ -235,18 +235,18 @@ const preview=document.getElementById('etapaPreview');
 const msgs=document.getElementById('mensajeEstado');
 
 const pts={A:1,B:2,C:3,D:4};
-const etapaNombres={idea:'Idea',startup:'Startup',operacional:'Operacional',escalable:'Escalable'};
+const etapaNombres={Lanzamiento:'Lanzamiento',startup:'Startup',Consolidación:'Consolidación',Escalable:'Escalable'};
 const etapaDesc={
-  idea:'Tu negocio está en la etapa más temprana. El diagnóstico se enfocará en validar tu modelo y sentar las bases.',
+  Lanzamiento:'Tu negocio está en la etapa más temprana. El diagnóstico se enfocará en validar tu modelo y sentar las bases.',
   startup:'Tu negocio está despegando. El diagnóstico identificará cómo estabilizar y estructurar el crecimiento.',
-  operacional:'Tu negocio opera de forma constante. El diagnóstico buscará ordenar, eficientar y preparar para escalar.',
+  consolidación:'Tu negocio opera de forma constante. El diagnóstico buscará ordenar, eficientar y preparar para escalar.',
   escalable:'Tu negocio está listo para crecer. El diagnóstico definirá la estrategia de expansión más adecuada.'
 };
 
 function clasificar(p){
-  if(p<=5)return'idea';
+  if(p<=5)return'i';
   if(p<=9)return'startup';
-  if(p<=13)return'operacional';
+  if(p<=13)return'consolidación';
   return'escalable';
 }
 
@@ -257,9 +257,9 @@ function calcular(){
   var etapa=clasificar(total);
   var alerta='';
   if(selVentas.value==='A'){
-    etapa='idea';
-    alerta='Sin ventas activas: clasificación asignada como etapa Idea.';
-  } else if(selVentas.value==='B'&&(etapa==='operacional'||etapa==='escalable')){
+    etapa='Lanzamiento';
+    alerta='Sin ventas activas: clasificación asignada como etapa Lanzamiento.';
+  } else if(selVentas.value==='B'&&(etapa==='consolidación'||etapa==='escalable')){
     alerta='El negocio tiene estructura pero las ventas son irregulares — esto es una brecha clave que el diagnóstico abordará.';
   }
   return{etapa:etapa,etapaNombre:etapaNombres[etapa],puntaje:total,etapaPorPuntaje:clasificar(total),alerta:alerta};
