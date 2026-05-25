@@ -437,31 +437,6 @@ img{ max-width:100%; height:auto; display:block; }
 .mobile-menu .m-cta{margin:14px 24px 0;background:var(--gold);color:var(--bg);text-align:center;padding:14px;border-radius:8px;font-weight:700;font-size:15px;border-bottom:none;}
 .mobile-menu .m-cta:hover{background:var(--gold-light);}
 @media(max-width:900px){.navbar{padding:12px 20px;}.menu{display:none;}.nav-cta{display:none;}.hamburger{display:flex;}}
-
-/* ===== BRIDGE: CÓMO FUNCIONA ===== */
-.bridge{background:var(--bg);padding:88px 48px;position:relative;overflow:hidden;}
-.bridge::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(212,175,55,0.07) 0%,transparent 70%);pointer-events:none;}
-.bridge-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-.bridge-header{text-align:center;margin-bottom:52px;}
-.bridge-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.28);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.6px;text-transform:uppercase;margin-bottom:18px;}
-.bridge-eyebrow span{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;}
-.bridge-header h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.5vw,2.75rem);font-weight:800;color:white;line-height:1.15;margin-bottom:16px;}
-.bridge-header h2 em{font-style:normal;color:var(--gold);}
-.bridge-header p{font-size:clamp(1rem,1.8vw,1.15rem);color:rgba(255,255,255,0.72);line-height:1.80;max-width:740px;margin:0 auto;}
-.bridge-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:48px;position:relative;}
-.bridge-steps::before{content:'';position:absolute;top:36px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.35) 20%,rgba(212,175,55,0.35) 80%,transparent);z-index:0;}
-.bridge-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px;position:relative;z-index:1;}
-.bridge-step-num{width:72px;height:72px;border-radius:50%;background:var(--dark-text);border:2px solid rgba(212,175,55,0.40);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 20px auto;position:relative;transition:border-color 0.3s,box-shadow 0.3s;flex-shrink:0;}
-.bridge-step:hover .bridge-step-num{border-color:var(--gold);box-shadow:0 0 0 6px rgba(212,175,55,0.10);}
-.bridge-step-badge{position:absolute;top:-6px;right:-6px;width:22px;height:22px;background:var(--gold);border-radius:50%;color:var(--dark-text);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-.bridge-step-content{flex:1;}
-.bridge-step h3{font-size:15px;font-weight:700;color:white;margin-bottom:8px;line-height:1.3;}
-.bridge-step p{font-size:13.5px;color:rgba(255,255,255,0.58);line-height:1.65;}
-.bridge-tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--gold);background:rgba(212,175,55,0.10);border:1px solid rgba(212,175,55,0.22);padding:3px 10px;border-radius:999px;letter-spacing:0.4px;}
-.bridge-cta{text-align:center;padding-top:8px;}
-.bridge-cta p{font-size:15px;color:rgba(255,255,255,0.60);margin-bottom:20px;}
-@media(max-width:900px){.bridge{padding:64px 28px;}.bridge-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;}.bridge-steps::before{display:none;}}
-@media(max-width:600px){.bridge{padding:52px 16px;}.bridge-steps{grid-template-columns:1fr;gap:28px;}.bridge-step{flex-direction:row;text-align:left;gap:16px;align-items:flex-start;}.bridge-step-num{flex-shrink:0;margin:0;}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -604,56 +579,19 @@ img{ max-width:100%; height:auto; display:block; }
 <!-- PUENTE A CÓMO FUNCIONA -->
 <section class="bridge">
   <div class="bridge-inner">
-
-    <div class="bridge-header">
-      <div class="bridge-eyebrow"><span></span>Nuestra metodología</div>
-      <h2>Cada servicio parte de un<br><em>diagnóstico, no de suposiciones</em></h2>
-      <p>No proponemos soluciones sin entender primero la realidad de tu negocio. Usamos un sistema estructurado de 4 etapas que garantiza que cada intervención esté basada en evidencia, no en intuición.</p>
+    <div class="bridge-left">
+      <span class="sec-eyebrow">¿Cómo lo hacemos?</span>
+      <h2>Cada servicio comienza con<br>un <em>diagnóstico preciso</em></h2>
+      <p>No intervenimos en ningún área sin entender primero el estado real de tu negocio. Nuestro sistema diagnóstico identifica exactamente dónde están las brechas, con qué intensidad hay que actuar y en qué orden.</p>
+      <a class="btn-main" href="como-funciona.html">Ver la metodología completa →</a>
     </div>
-
-    <div class="bridge-steps">
-      <div class="bridge-step">
-        <div class="bridge-step-num">🔍<div class="bridge-step-badge">1</div></div>
-        <div class="bridge-step-content">
-          <h3>Diagnóstico Estratégico 360°</h3>
-          <p>Evaluamos las 6 dimensiones clave de tu negocio e identificamos el patrón exacto de brechas.</p>
-          <span class="bridge-tag">Completamente gratuito</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">🗺<div class="bridge-step-badge">2</div></div>
-        <div class="bridge-step-content">
-          <h3>Mapa de Brechas y Plan de Acción</h3>
-          <p>Construimos la hoja de ruta priorizada por impacto real — con responsables, fechas y entregables.</p>
-          <span class="bridge-tag">Entregable en 30 días</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">⚙️<div class="bridge-step-badge">3</div></div>
-        <div class="bridge-step-content">
-          <h3>Implementación con las herramientas correctas</h3>
-          <p>Cada problema se resuelve con la metodología diseñada específicamente para su causa raíz.</p>
-          <span class="bridge-tag">PAI · MCES · PASER</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">📊<div class="bridge-step-badge">4</div></div>
-        <div class="bridge-step-content">
-          <h3>Seguimiento y mejora continua</h3>
-          <p>Acompañamos semana a semana con KPI, juntas estructuradas y auditorías hasta que los resultados llegan a los números.</p>
-          <span class="bridge-tag">Revisión semanal</span>
-        </div>
-      </div>
+    <div class="bridge-card">
+      <div class="bridge-card-title">El proceso en 4 pasos</div>
+      <div class="bridge-item"><div class="bridge-icon">🔍</div><div class="bridge-item-text"><strong>Diagnóstico Estratégico 360°</strong><span>Evaluamos las 6 dimensiones clave de tu negocio — completamente gratuito</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">🗺</div><div class="bridge-item-text"><strong>Mapa de Brechas y Plan de Acción</strong><span>Construimos la hoja de ruta priorizada por impacto real en tu negocio</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">⚙️</div><div class="bridge-item-text"><strong>Implementación con herramientas correctas</strong><span>Resolvemos cada problema con la metodología diseñada para ese caso</span></div></div>
+      <div class="bridge-item"><div class="bridge-icon">📊</div><div class="bridge-item-text"><strong>Seguimiento y mejora continua</strong><span>Acompañamos semana a semana hasta que los resultados llegan a los números</span></div></div>
     </div>
-
-    <div class="bridge-cta">
-      <p>¿Quieres ver en detalle cómo funciona cada etapa del proceso?</p>
-      <a class="btn-main" href="como-funciona.html">
-        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-        Ver la metodología completa
-      </a>
-    </div>
-
   </div>
 </section>
 
